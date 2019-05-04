@@ -30,6 +30,11 @@ h2 {
   background-color: salmon;
 }
 
+.watch {
+  margin-top: 10px;
+  margin-right: 5px;
+}
+
 .watchBtn {
   float: right;
 }
