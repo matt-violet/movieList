@@ -1,7 +1,8 @@
 import React from 'react';
 
 var MovieEntry = (props) => (
-    <div>{props.movie.title}</div>
+    <div class='movieEntry'>{props.movie.title}<button class='watchBtn'>Watch</button>
+    </div>
 );
   
 export default MovieEntry;

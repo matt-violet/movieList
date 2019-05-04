@@ -46,6 +46,7 @@ class App extends React.Component {
         <div>
           <AddMovie addMovie={this.addMovie} />
           <SearchBar searchMovies={this.searchMovies} />
+          <br></br>
           <MovieList movies={this.state.movies} />
         </div>
       );
@@ -56,6 +57,7 @@ class App extends React.Component {
         <div>
           <AddMovie addMovie={this.addMovie} />
           <SearchBar searchMovies={this.searchMovies} />
+          <br></br>
           <MovieList movies={this.state.filteredMovies} />
         </div>
       );

@@ -18,7 +18,24 @@ h2 {
   margin-left: 100px;
 }
 
+.movieEntry {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  max-width: 300px;
+  padding: 8px;
+  outline: 1px solid black;
+  background-color: lightsalmon;
+}
+
+.movieEntry:hover {
+  background-color: salmon;
+}
+
+.watchBtn {
+  float: right;
+}
+
 #root {
   margin-left: 100px;
 }
+
 
