@@ -1,21 +1,20 @@
-import React,{Component} from 'react';
+import React from 'react';
+
 
 class SearchBar extends React.Component {
     constructor(props) {
         super(props)
-
         this.state = {
-            query: '',
+            query: ''
         }
-
         this.searchHandler = this.searchHandler.bind(this);
     }
 
+
     searchHandler(event) {
         this.setState({query: event.target.value});
-      }
+    }
     
-
 
     render(){
         return (
@@ -29,18 +28,3 @@ class SearchBar extends React.Component {
 
 
 export default SearchBar;
-
-// set state.query to search text
-// filter list to those containing search value
-// re-render app with filtered results
-
-
-
-// var SearchBar = (props) => (
-//     <div>
-//       <form onSubmit={props.submitHandler}>
-//         <input type="text" className="search" id="search" placeholder="Search..." />
-//         <input type="submit" className="submit-search" value="Go!" id="submit"/>
-//       </form>
-//     </div>
-//   );
