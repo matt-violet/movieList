@@ -2,6 +2,7 @@ import React from 'react';
 import MovieList from './movieList.js';
 import SearchBar from './search.js';
 import movieData from '../data/movieData.json';
+import AddMovie from './add.js';
 
 
 class App extends React.Component {
@@ -13,6 +14,7 @@ class App extends React.Component {
       filteredMovies: []
     };
     this.searchMovies = this.searchMovies.bind(this);
+    this.addMovie = this.addMovie.bind(this);
   }
 
 
@@ -24,12 +26,25 @@ class App extends React.Component {
     event.preventDefault();
   }
 
+  addMovie(event, movieToAdd) {
+    this.state.filteredMovies = [];
+    var newMovie = {
+      'title': movieToAdd
+    };
+    this.state.filteredMovies.push(newMovie);
+    this.setState({
+      filteredMovies: this.state.filteredMovies
+    });
+    event.preventDefault();
+  }
+
 
   render() {
     if (this.state.filteredMovies.length === 0) {
 
       return (
         <div>
+          <AddMovie addMovie={this.addMovie} />
           <SearchBar searchMovies={this.searchMovies} />
           <MovieList movies={this.state.movies} />
         </div>
@@ -39,6 +54,7 @@ class App extends React.Component {
    
       return (
         <div>
+          <AddMovie addMovie={this.addMovie} />
           <SearchBar searchMovies={this.searchMovies} />
           <MovieList movies={this.state.filteredMovies} />
         </div>
