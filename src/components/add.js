@@ -17,7 +17,7 @@ class AddMovie extends React.Component {
 
     render(){
         return (
-            <form id='form' onSubmit={(event) => this.props.addMovie(event, this.state.addedMovie)}>
+            <form onSubmit={(event) => this.props.addMovie(event, this.state.addedMovie)}>
                 <input type='text' id='add' placeholder='Add a movie...' value={this.state.addedMovie} onChange={this.addHandler} />
                 <input type='submit' value='Add' />   
             </form>

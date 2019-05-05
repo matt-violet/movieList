@@ -1,29 +1,13 @@
 import React from 'react';
 
+// props = movies array and markWatched function
+var Watch = (props) => (
+    <div>
+        <input type='button' value='To Watch' class='btn' />
+        <input type='button' value='Watched' class='btn' />
+    </div>
+);
 
-class Watch extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            toWatch: [],
-            watched: []
-        }
-        this.watchHandler = this.watchHandler.bind(this);
-    }
-    
-    watchHandler(event){
-
-    }
-
-    render(){
-        return (
-            <form>
-                <input class ='watch' id='toWatch' type='submit' value='To Watch' />
-                <input class='watch' id='watch' type='submit' value='Watched' />   
-            </form>
-        )
-    }
-}
 
 
 export default Watch;

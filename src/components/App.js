@@ -10,14 +10,15 @@ class App extends React.Component {
     super();
     this.state = {
       movies: [],
-      //displayedMovies: [],
-      filteredMovies: []
+      filteredMovies: [],
+      watched: []
     };
     this.searchMovies = this.searchMovies.bind(this);
     this.addMovie = this.addMovie.bind(this);
   }
 
 
+  // sets filteredMovies state and movies state to movies that include query
   searchMovies(event, query) {
     var filteredMoviesArr = this.state.movies.filter(movie => movie.title.toLowerCase().includes(query.toLowerCase()));
     this.setState({
@@ -30,6 +31,7 @@ class App extends React.Component {
     event.preventDefault();
   }
 
+  // adds movie to movies array and clears filteredMovies array
   addMovie(event, movieToAdd) {
     var newMovie = {'title': movieToAdd};
     this.state.movies.push(newMovie);
@@ -40,6 +42,17 @@ class App extends React.Component {
     event.preventDefault();
   }
 
+  markWatched(event, movie) {
+    console.log('ayyy');
+    var watchedMovie = {'title': movie};
+    this.state.watched.push(watchedMovie);
+    this.setState({
+      watched: this.state.watched
+    });
+    event.preventDefault();
+  }
+
+
 
   render() {
     if (this.state.filteredMovies.length === 0) {
@@ -47,7 +60,7 @@ class App extends React.Component {
         <div>
           <AddMovie addMovie={this.addMovie} />
           <SearchBar searchMovies={this.searchMovies} />
-          <Watch />
+          <Watch movies={this.state.movies} markWatched={this.markWatched} />
           <br></br>
           <MovieList movies={this.state.movies} />
         </div>
@@ -57,7 +70,7 @@ class App extends React.Component {
         <div>
           <AddMovie addMovie={this.addMovie} />
           <SearchBar searchMovies={this.searchMovies} />
-          <Watch />
+          <Watch movies={this.state.movies} markWatched={this.markWatched} />
           <br></br>
           <MovieList movies={this.state.filteredMovies} />
         </div>
